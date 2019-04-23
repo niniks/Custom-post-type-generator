@@ -1,2 +1,2 @@
-# Custom-post-type-generator
+# Custom-post-type-generator [WIP]
 Simple basic post type generator
