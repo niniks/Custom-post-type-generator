@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Wordpress CPT Generator</title>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
 
@@ -22,21 +23,44 @@
         <div class="col-6 p-5 left">
             <h3>Simple post type code generator</h3>
         <form onsubmit="generatePostTypeCode(event)">
-            <div class="form-group">
-            <label>Name (plural)</label>
-                <input type="text" name="title" class="form-control" required>
-            </div>
-            <div class="form-group">
-            <label>Name (singular)</label>
-                <input type="text" name="titleSingle" class="form-control" required>
-            </div>                 
-            <div class="form-group">
-            <label>Slug</label>
-                <input type="text" name="slug" class="form-control" required>
-            </div>
-            <div class="form-group">
-            <button type="submit" class="btn btn-primary">Generate code</button>
-            </div>
+          <div class="row">
+                <div class="col-12">
+                        <div class="form-group">
+                                <label>Text domain</label>
+                                    <input type="text" name="textDomain" class="form-control" placeholder="your-plugin-or-theme-name" required>
+                                </div>
+                </div>
+                <div class="col-6">
+                        <div class="form-group">
+                                <label>Name (plural)</label>
+                                    <input type="text" name="title" class="form-control" placeholder="Books" required>
+                                </div>
+                </div>
+                        <div class="col-6">
+                                <div class="form-group">
+                                        <label>Name (singular)</label>
+                                            <input type="text" name="titleSingle" placeholder="Book" class="form-control" required>
+                                        </div>  
+                        </div>               
+                      <div class="col-12">
+                            <div class="form-group">
+                                    <label>Slug <small class="text-muted">https://yourwebsiteurl.com/<strong>your-slug</strong></small></label>
+                                        <input type="text" name="slug" class="form-control" placeholder="your-slug" required>
+                                    </div>
+                      </div>
+                      <div class="col-12">
+                            <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Enable archive</label>
+                                  </div>
+                      </div>
+                    <div class="col-12">
+                        <hr>
+                            <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Generate code</button>
+                                    </div>
+                    </div>
+          </div>
         </form>
     </div>
     <div class="col-6 p-5 right">
@@ -49,6 +73,15 @@
 </div>
 
 
+<div class="github">
+        <a href="https://github.com/niniks/Custom-post-type-generator">
+                <i class="fab fa-github"></i>
+        </a>
+</div>
+
+<div class="copy-paste" onclick="copyCode()">
+        <i class="fas fa-copy"></i>
+</div>
 
 </body>
 </html>

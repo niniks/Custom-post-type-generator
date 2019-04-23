@@ -7,3 +7,36 @@
 #generatedCode code {
     color:#54d654;
 }
+
+.github {
+    position: fixed;
+    left: 25px;
+    bottom: 15px;
+}
+
+.copy-paste {
+    position: fixed;
+    right: 40px;
+    top: 15px;
+}
+
+.copy-paste:hover i{
+    color: #fff;
+    cursor:pointer;
+}
+
+.copy-paste i {
+    font-size:40px;
+    color: #9d9d9d;
+    transition:all 300ms linear;
+}
+
+.github a {
+    font-size: 40px;
+    color: #9d9d9d;
+    transition:all 300ms linear;
+}
+
+.github a:hover {
+    color:#000;
+}
