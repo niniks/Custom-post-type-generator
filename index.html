@@ -7,98 +7,47 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="main.js"></script>
 </head>
 <body>
 
 <div id="app">
     <div class="container-fluid">
         <div class="row">
-        <div class="col-6 left">
+        <div class="col-6 p-5 left">
+            <h3>Simple post type code generator</h3>
         <form onsubmit="generatePostTypeCode(event)">
             <div class="form-group">
-            <label>Naam post type (Meervoud)</label>
-                <input type="text" name="title" class="form-control">
+            <label>Name (plural)</label>
+                <input type="text" name="title" class="form-control" required>
             </div>
             <div class="form-group">
-            <label>Naam post type (Enkelvoud)</label>
-                <input type="text" name="titleSingle" class="form-control">
+            <label>Name (singular)</label>
+                <input type="text" name="titleSingle" class="form-control" required>
             </div>                 
             <div class="form-group">
-            <label>Slug post type</label>
+            <label>Slug</label>
                 <input type="text" name="slug" class="form-control" required>
             </div>
             <div class="form-group">
-            <button type="submit" class="btn btn-primary">Genereer code</button>
+            <button type="submit" class="btn btn-primary">Generate code</button>
             </div>
         </form>
     </div>
-    <div class="col-6 right">
-        <div id="generatedCode"></div>
+    <div class="col-6 p-5 right">
+        <div id="generatedCode">
+            <code>Fill on the left and generate</code>
+        </div>
     </div>
         </div>
     </div>
 </div>
-    
-    <script>
-        //Create javascript function
-        function generatePostTypeCode(e){
-            e.preventDefault();
-            //Get values
-            var name = document.getElementsByName("title")[0].value
-            var nameSingle = document.getElementsByName("titleSingle")[0].value
-            var slug = document.getElementsByName("slug")[0].value
-            var generatedCodeDiv = document.getElementById('generatedCode');
-            
-            //Run generation
-            var plainCode = `add_action( 'init', 'codex_book_init' );<br>
-/**<br>
- * Register a book post type.<br>
- *<br>
- * @link http://codex.wordpress.org/Function_Reference/register_post_type <br>
- */<br>
-function codex_book_init() { <br>
-	$labels = array( <br>
-		'name'               => _x( '`+name+`', 'post type general name', 'your-plugin-textdomain' ),<br>
-		'singular_name'      => _x( '`+nameSingle+`', 'post type singular name', 'your-plugin-textdomain' ),<br>
-		'menu_name'          => _x( '`+name+`', 'admin menu', 'your-plugin-textdomain' ),<br>
-		'name_admin_bar'     => _x( '`+nameSingle+`', 'add new on admin bar', 'your-plugin-textdomain' ),<br>
-		'add_new'            => _x( 'Add New', '`+nameSingle.toLowerCase()+`', 'your-plugin-textdomain' ),<br>
-		'add_new_item'       => __( 'Add New `+nameSingle+`', 'your-plugin-textdomain' ),<br>
-		'new_item'           => __( 'New `+nameSingle+`', 'your-plugin-textdomain' ),<br>
-		'edit_item'          => __( 'Edit `+nameSingle+`', 'your-plugin-textdomain' ),<br>
-		'view_item'          => __( 'View `+nameSingle+`', 'your-plugin-textdomain' ),<br>
-		'all_items'          => __( 'All `+name+`', 'your-plugin-textdomain' ),<br>
-		'search_items'       => __( 'Search `+name+`', 'your-plugin-textdomain' ),<br>
-		'parent_item_colon'  => __( 'Parent `+name+`:', 'your-plugin-textdomain' ),<br>
-		'not_found'          => __( 'No `+name+` found.', 'your-plugin-textdomain' ),<br>
-		'not_found_in_trash' => __( 'No `+name+` found in Trash.', 'your-plugin-textdomain' )<br>
-	);<br><br>
 
-	$args = array(<br>
-		'labels'             => $labels,<br>
-		'description'        => __( 'Description.', 'your-plugin-textdomain' ),<br>
-		'public'             => true,<br>
-		'publicly_queryable' => true,<br>
-		'show_ui'            => true,<br>
-		'show_in_menu'       => true,<br>
-		'query_var'          => true,<br>
-		'rewrite'            => array( 'slug' => '`+slug+`' ),<br>
-		'capability_type'    => 'post',<br>
-		'has_archive'        => true,<br>
-		'hierarchical'       => false,<br>
-		'menu_position'      => null,<br>
-		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )<br>
-	);<br><br>
-
-	register_post_type( 'book', $args );<br>
-}`;
-    plainCode = '<code>'+plainCode+'</code>'
-            generatedCodeDiv.innerHTML = plainCode;
-        }
-    </script>
 
 
 </body>

@@ -1,0 +1,9 @@
+.right {
+    background:#383838;
+    height:100vh;
+    overflow-y:scroll;
+}
+
+#generatedCode code {
+    color:#54d654;
+}
