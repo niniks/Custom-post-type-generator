@@ -1,4 +1,6 @@
 # Custom-post-type-generator [WIP]
-Simple basic post type generator
+Simple basic post type generator for wordpress.
+Based on your input it will generate a custom php code to register your custom post type
 
-Demo: http://htmlpreview.github.io/?https://github.com/niniks/Custom-post-type-generator/blob/master/index.html
+
+[DEMO](http://htmlpreview.github.io/?https://github.com/niniks/Custom-post-type-generator/master/index.html)
