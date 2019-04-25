@@ -7,13 +7,46 @@
         var textDomain = document.getElementsByName("textDomain")[0].value
         var description = document.getElementsByName("description")[0].value
         var slug = document.getElementsByName("slug")[0].value
+
+        //Checkboxes
         var archives = document.getElementsByName("archives")[0].checked
+        var title = document.getElementsByName("title_field")[0].checked
+        var editor = document.getElementsByName("editor")[0].checked
+        var author = document.getElementsByName("author")[0].checked
+        var thumbnail = document.getElementsByName("thumbnail")[0].checked
+        var excerpt = document.getElementsByName("excerpt")[0].checked
+        var comments = document.getElementsByName("comments")[0].checked
 
-        console.log(archives);
-
+        //Get div to put output code in
         var generatedCodeDiv = document.getElementById('generatedCode');
+
+        //Generate field array string
+        var fieldArray = [];
+
+        //Check if true
+        if(title){
+            fieldArray.push('title');
+        }
+        if(editor){
+            fieldArray.push('editor');
+        }
+        if(author){
+            fieldArray.push('author');
+        }
+        if(thumbnail){
+            fieldArray.push('thumbnail');
+        }
+        if(excerpt){
+            fieldArray.push('excerpt');
+        }
+        if(comments){
+            fieldArray.push('comments');
+        }
+
+        var fieldArrayString = JSON.stringify(fieldArray);
         
-        //Run generation
+        
+        //Make the variable string
         var plainCode = `add_action( 'init', 'codex_`+nameSingle.toLowerCase()+`_init' );<br>
 /**<br>
 * Register a `+nameSingle.toLowerCase()+` post type.<br>
@@ -51,7 +84,7 @@ $args = array(<br>
     'has_archive'        => `+archives+`,<br>
     'hierarchical'       => false,<br>
     'menu_position'      => null,<br>
-    'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )<br>
+    'supports'           => `+fieldArrayString+`<br>
 );<br><br>
 
 register_post_type( '`+nameSingle.toLowerCase()+`', $args );<br>

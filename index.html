@@ -45,7 +45,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Post type description</label>
-                                <textarea name="description" id="" cols="30" rows="4" class="form-control" required></textarea>
+                                <textarea name="description" id="" cols="30" rows="2" class="form-control" required></textarea>
                             </div>
                         </div>             
                       <div class="col-12">
@@ -55,15 +55,67 @@
                                     </div>
                       </div>
                       <div class="col-12">
-                            <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" name="archives" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Enable archive</label>
-                                  </div>
+                          <label>Options</label>
+                                 <ul class="list-group">
+                                     <li class="list-group-item">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="archives" id="archives">
+                                            <label class="form-check-label" for="archives">Enable archive</label>
+                                          </div>
+                                     </li>
+                                 </ul>
+                                 <hr>
+                                 <label>Fields</label>
+                                 <ul class="list-group">
+                                   <div class="row">
+                                       <div class="col-6">
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" name="title_field" id="title_field">
+                                                <label class="form-check-label" for="title_field">Title</label>
+                                              </div>
+                                         </li>
+                                         <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" name="editor" id="editor">
+                                                <label class="form-check-label" for="editor">Editor</label>
+                                              </div>
+                                         </li>
+                                         <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" name="author" id="author">
+                                                <label class="form-check-label" for="author">Author</label>
+                                              </div>
+                                         </li>
+                                    
+                                       </div>
+                                       <div class="col-6">
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" name="thumbnail" id="thumbnail">
+                                                <label class="form-check-label" for="thumbnail">Featured image</label>
+                                              </div>
+                                         </li>
+                                         <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" name="excerpt" id="excerpt">
+                                                <label class="form-check-label" for="excerpt">Excerpt</label>
+                                              </div>
+                                         </li>
+                                         <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" name="comments" id="comments">
+                                                <label class="form-check-label" for="comments">Comments</label>
+                                              </div>
+                                         </li>
+                                       </div>
+                                   </div>
+                                 </ul>
                       </div>
                     <div class="col-12">
                         <hr>
                             <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Generate code</button>
+                                    <button type="submit" class="btn btn-primary btn-block">Generate code</button>
                                     </div>
                     </div>
           </div>
