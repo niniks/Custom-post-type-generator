@@ -5,21 +5,22 @@
         var name = document.getElementsByName("title")[0].value
         var nameSingle = document.getElementsByName("titleSingle")[0].value
         var textDomain = document.getElementsByName("textDomain")[0].value
+        var description = document.getElementsByName("description")[0].value
         var slug = document.getElementsByName("slug")[0].value
-        var archives = document.getElementsByName("archives")[0].value
+        var archives = document.getElementsByName("archives")[0].checked
 
         console.log(archives);
 
         var generatedCodeDiv = document.getElementById('generatedCode');
         
         //Run generation
-        var plainCode = `add_action( 'init', 'codex_book_init' );<br>
+        var plainCode = `add_action( 'init', 'codex_`+nameSingle.toLowerCase()+`_init' );<br>
 /**<br>
-* Register a book post type.<br>
+* Register a `+nameSingle.toLowerCase()+` post type.<br>
 *<br>
 * @link http://codex.wordpress.org/Function_Reference/register_post_type <br>
 */<br>
-function codex_book_init() { <br>
+function codex_`+nameSingle.toLowerCase()+`_init() { <br>
 $labels = array( <br>
     'name'               => _x( '`+name+`', 'post type general name', '`+textDomain+`' ),<br>
     'singular_name'      => _x( '`+nameSingle+`', 'post type singular name', '`+textDomain+`' ),<br>
@@ -39,21 +40,21 @@ $labels = array( <br>
 
 $args = array(<br>
     'labels'             => $labels,<br>
-    'description'        => __( 'Description.', '`+textDomain+`' ),<br>
+    'description'        => __( '`+description+`', '`+textDomain+`' ),<br>
     'public'             => true,<br>
     'publicly_queryable' => true,<br>
     'show_ui'            => true,<br>
     'show_in_menu'       => true,<br>
     'query_var'          => true,<br>
-    'rewrite'            => array( 'slug' => '`+slug+`' ),<br>
+    'rewrite'            => array( 'slug' => '`+slug.toLowerCase()+`' ),<br>
     'capability_type'    => 'post',<br>
-    'has_archive'        => true,<br>
+    'has_archive'        => `+archives+`,<br>
     'hierarchical'       => false,<br>
     'menu_position'      => null,<br>
     'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )<br>
 );<br><br>
 
-register_post_type( 'book', $args );<br>
+register_post_type( '`+nameSingle.toLowerCase()+`', $args );<br>
 }`;
 plainCode = '<code>'+plainCode+'</code>'
 generatedCodeDiv.innerHTML = plainCode;
