@@ -6,6 +6,10 @@
         var nameSingle = document.getElementsByName("titleSingle")[0].value
         var textDomain = document.getElementsByName("textDomain")[0].value
         var slug = document.getElementsByName("slug")[0].value
+        var archives = document.getElementsByName("archives")[0].value
+
+        console.log(archives);
+
         var generatedCodeDiv = document.getElementById('generatedCode');
         
         //Run generation
