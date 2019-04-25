@@ -43,6 +43,7 @@
             fieldArray.push('comments');
         }
 
+        //Create string from array in order to use in our variable string
         var fieldArrayString = JSON.stringify(fieldArray);
         
         
@@ -89,28 +90,32 @@ $args = array(<br>
 
 register_post_type( '`+nameSingle.toLowerCase()+`', $args );<br>
 }`;
+
+//Place variable string between code tags
 plainCode = '<code>'+plainCode+'</code>'
+
+//Add generated variable string to the generatedcodediv so it will be displayed
 generatedCodeDiv.innerHTML = plainCode;
 
     }
 
     function copyCode() {
-            //Select code content
-            var copyText = document.querySelector("code").textContent;
-            // Create temp textarea for copy code
-            const el = document.createElement('textarea');
-            //Select code
-            el.value = copyText;
-            //Temp add to body
-            document.body.appendChild(el);
-            //Now select the code
-            el.select();
-            //Copy it to system clipboard
-            document.execCommand('copy');
-            //Remove temp el in body
-            document.body.removeChild(el);
-            //Alert user about success copy
-            alert("Copied to clipboard!");
+        //Select code content
+        var copyText = document.querySelector("code").textContent;
+        // Create temp textarea for copy code
+        const el = document.createElement('textarea');
+        //Select code
+        el.value = copyText;
+        //Temp add to body
+        document.body.appendChild(el);
+        //Now select the code
+        el.select();
+        //Copy it to system clipboard
+        document.execCommand('copy');
+        //Remove temp el in body
+        document.body.removeChild(el);
+        //Alert user about success copy
+        alert("Copied to clipboard!");
     }
 
     
