@@ -21,7 +21,6 @@
     <div class="container-fluid">
         <div class="row">
         <div class="col-6 p-5 left">
-            <h3>Simple post type code generator</h3>
         <form onsubmit="generatePostTypeCode(event)">
           <div class="row">
                 <div class="col-12">
@@ -77,7 +76,7 @@
                                  <label>Fields</label>
                                  <ul class="list-group">
                                    <div class="row">
-                                       <div class="col-6">
+                                       <div class="col-4">
                                         <li class="list-group-item">
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input" name="title_field" id="title_field">
@@ -90,15 +89,10 @@
                                                 <label class="form-check-label" for="editor">Editor</label>
                                               </div>
                                          </li>
-                                         <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" name="author" id="author">
-                                                <label class="form-check-label" for="author">Author</label>
-                                              </div>
-                                         </li>
+                                     
                                     
                                        </div>
-                                       <div class="col-6">
+                                       <div class="col-4">
                                         <li class="list-group-item">
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input" name="thumbnail" id="thumbnail">
@@ -106,6 +100,14 @@
                                               </div>
                                          </li>
                                          <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" name="author" id="author">
+                                                <label class="form-check-label" for="author">Author</label>
+                                              </div>
+                                         </li>
+                                       </div>
+                                       <div class="col-4">
+                                        <li class="list-group-item">
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input" name="excerpt" id="excerpt">
                                                 <label class="form-check-label" for="excerpt">Excerpt</label>
@@ -124,7 +126,7 @@
                     <div class="col-12">
                         <hr>
                             <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-block">Generate code</button>
+                                    <button type="submit" class="btn btn-success btn-block">Generate code</button>
                                     </div>
                     </div>
           </div>
@@ -132,7 +134,10 @@
     </div>
     <div class="col-6 p-5 right">
         <div id="generatedCode">
-            <code>Fill on the left and generate</code>
+            <code class="text-center d-block">
+                <i class="fab fa-wordpress"></i><br>
+                <span>Custom post type generator</span><br>
+                Fill on the left and <strong>generate code</strong></code>
         </div>
     </div>
         </div>

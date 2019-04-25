@@ -8,6 +8,18 @@
     color:#54d654;
 }
 
+#generatedCode code i {
+    font-size: 195px;
+    margin: 35% 0 20px 0;
+    text-shadow: 0px 0px 14px rgba(0, 255, 0, 0.34);
+}
+
+#generatedCode code span {
+    font-size: 24px;
+    display: block;
+    margin-bottom: -15px;
+}
+
 .github {
     position: fixed;
     left: 25px;
