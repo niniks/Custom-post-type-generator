@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
 .left {
     height: 100vh;
     overflow-y: scroll;
+    font-family: 'Roboto', sans-serif;
 }
 
 .left label {
@@ -13,6 +16,7 @@
 
 .right {
     background:#383838;
+    box-shadow:inset 0px 0px 50px rgba(0, 0, 0, 0.43);
     height:100vh;
     overflow-y:scroll;
 }
@@ -35,7 +39,7 @@
 
 .github {
     position: fixed;
-    left: 25px;
+    right: 40px;
     bottom: 15px;
 }
 
@@ -63,5 +67,5 @@
 }
 
 .github a:hover {
-    color:#000;
+    color:#fff;
 }
