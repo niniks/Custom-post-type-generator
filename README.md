@@ -5,7 +5,7 @@ Based on your input it will generate the php code to register your custom post t
 
 [DEMO](https://htmlpreview.github.io/?https://github.com/niniks/Custom-post-type-generator/master/index.html)
 
-**Current options**
+**Current fillable options**
 1. Text domain
 2. Post type name (plural)
 3. Post type name (singular)
