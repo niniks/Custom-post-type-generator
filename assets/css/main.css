@@ -1,3 +1,16 @@
+.left {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.left label {
+    font-weight:bold;
+}
+
+.left .form-check label {
+    font-weight:normal;
+}
+
 .right {
     background:#383838;
     height:100vh;
