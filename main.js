@@ -7,6 +7,7 @@
         var textDomain = document.getElementsByName("textDomain")[0].value
         var description = document.getElementsByName("description")[0].value
         var slug = document.getElementsByName("slug")[0].value
+        var capability = document.getElementsByName("capability")[0].value
 
         //Checkboxes
         var archives = document.getElementsByName("archives")[0].checked
@@ -81,7 +82,7 @@ $args = array(<br>
     'show_in_menu'       => true,<br>
     'query_var'          => true,<br>
     'rewrite'            => array( 'slug' => '`+slug.toLowerCase()+`' ),<br>
-    'capability_type'    => 'post',<br>
+    'capability_type'    => '`+capability+`',<br>
     'has_archive'        => `+archives+`,<br>
     'hierarchical'       => false,<br>
     'menu_position'      => null,<br>
